@@ -1,23 +1,23 @@
 package processes
 
 import (
-	"../message"
+	"../messages"
 )
 
-// ProcessA contains a message and passes it onto a receiver process
+// ProcessA contains a messages and passes it onto a receiver process
 type ProcessA struct {
-	m message.Message
+	m messages.Message
 }
 
 // Initialize a ProcessA from a JSON file
 func ProcessAFromJsonFile(filename string) ProcessA {
-	m := message.MessageFromJsonFile(filename)
+	m := messages.MessageFromJsonFile(filename)
 	return ProcessA{
 		m,
 	}
 }
 
-// Start a ProcessA and send its message over the channel
-func (p *ProcessA) Start(c chan<- message.Message) {
+// Start a ProcessA and send its messages over the channel
+func (p *ProcessA) Start(c chan<- messages.Message) {
 	c <- p.m
 }

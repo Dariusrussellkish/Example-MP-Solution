@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./message"
+	"./messages"
 	"./processes"
 	"fmt"
 	"github.com/akamensky/argparse"
@@ -24,7 +24,7 @@ func main() {
 	// initialize processes and channel
 	var pA = processes.ProcessAFromJsonFile(*f)
 	var pB processes.ProcessB
-	var c = make(chan message.Message)
+	var c = make(chan messages.Message)
 
 	go pA.Start(c)
 	pB.Start(c)

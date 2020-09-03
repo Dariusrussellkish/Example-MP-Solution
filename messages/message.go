@@ -1,4 +1,4 @@
-package message
+package messages
 
 import (
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-// Generic message type as specified in assignment
+// Generic messages type as specified in assignment
 type Message struct {
 	To      string
 	From    string
@@ -53,7 +53,7 @@ func (m *Message) UnmarshalJSON(j []byte) error {
 	return nil
 }
 
-// MessageFromJsonFile initializes a message from a Json filename
+// MessageFromJsonFile initializes a messages from a Json filename
 // TODO: Refactor to work from a []bytes or iobuffer to generalize
 func MessageFromJsonFile(filename string) Message {
 	jsonFile, err := os.Open(filename)

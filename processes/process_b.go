@@ -1,17 +1,17 @@
 package processes
 
 import (
-	"../message"
+	"../messages"
 	"fmt"
 )
 
-// ProcessB waits for a message and then prints it
+// ProcessB waits for a messages and then prints it
 type ProcessB struct {
-	m message.Message
+	m messages.Message
 }
 
-// Start a ProcessB, wait for a message on the channel and print it
-func (p *ProcessB) Start(c <-chan message.Message) {
+// Start a ProcessB, wait for a messages on the channel and print it
+func (p *ProcessB) Start(c <-chan messages.Message) {
 	p.m = <-c
 	fmt.Println(p.m.String())
 }

@@ -11,6 +11,22 @@ run relatively easily.
 ```bash
 go run main.go -f example.json
 ``` 
+
+**EVEN BETTER** build your go files for darwin/amd64 and include the executable in your final solution.
+This is the architecture of my laptop and will allow me to easily run your solution without installing the
+dependencies you used. 
+
+```bash
+export GOOS=darwin 
+export GOARCH=amd64 
+go build main.go
+```
+
+Then to run it, use
+```bash
+./Example-MP-Solution -f example.json
+```
+
 should produce the following output:
 ```text
 Title: Soll ich heute etwas Brot kaufen?
